@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitted Data</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div class="container mt-4">
+        <%- include('header') %>
+        <h2>Submitted Data:</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Password</th>
+                    <th>Subjects</th>
+                    <th>Credit Card</th>
+                    <th>City</th>
+                    <th>Favorite Languages</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% students.forEach(function(student) { %>
+                    <tr>
+                        <td><%= student.name %></td>
+                        <td><%= student.password %></td>
+                        <td>
+                            <ul>
+                                <% if (student.Algorithms) { %>
+                                    <li>Algorithms</li>
+                                <% } %>
+                                <% if (student.OOP) { %>
+                                    <li>OOP</li>
+                                <% } %>
+                                <% if (student.DataStructures) { %>
+                                    <li>Data Structures</li>
+                                <% } %>
+                            </ul>
+                        </td>
+                        <td><%= student.credit_card %></td>
+                        <td><%= student.city %></td>
+                        <td>
+                            <ul>
+                                <% student.languages.forEach(function(language) { %>
+                                    <li><%= language %></li>
+                                <% }); %>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            <img src="<%= student.profilePicture %>" alt="Profile Picture">
+                            <a href="<%= student.cv %>">Download CV</a>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+
+        <%- include('footer') %>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

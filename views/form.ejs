@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form with all controls</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>User Registration Form</h1>
+
+    <form action="form-handler" method="post" class="container" enctype="multipart/form-data">
+        <h2>Student Registration Form</h2>
+
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input name="name" type="text" class="form-control" maxlength="8" size="20">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input name="password" type="password" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Subjects</label>
+            <div class="form-check">
+                <input name="Algorithms" type="checkbox" class="form-check-input">
+                <label class="form-check-label">Algorithms</label>
+            </div>
+            <div class="form-check">
+                <input name="OOP" type="checkbox" class="form-check-input">
+                <label class="form-check-label">OOP</label>
+            </div>
+            <div class="form-check">
+                <input name="DataStructures" type="checkbox" class="form-check-input" checked>
+                <label class="form-check-label">Data Structures</label>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Credit Card</label>
+            <div class="form-check">
+                <input name="credit_card" type="radio" class="form-check-input" value="Visa" checked>
+                <label class="form-check-label">Visa</label>
+            </div>
+            <div class="form-check">
+                <input name="credit_card" type="radio" class="form-check-input" value="Master Card">
+                <label class="form-check-label">Master Card</label>
+            </div>
+            <div class="form-check">
+                <input name="credit_card" type="radio" class="form-check-input" value="American Express">
+                <label class="form-check-label">American Express</label>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Favorite Languages</label>
+            <div class="form-check">
+                <input type="checkbox" name="languages" value="Java" class="form-check-input">
+                <label class="form-check-label">Java</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="languages" value="C++" class="form-check-input">
+                <label class="form-check-label">C++</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="languages" value="Python" class="form-check-input">
+                <label class="form-check-label">Python</label>
+            </div> 
+        </div>
+
+        <div class="mb-3">
+            <label for="city" class="form-label">City</label>
+            <select name="city" id="city" class="form-select" required>
+                <option value="New York">New York</option>
+                <option value="London">London</option>
+                <option value="Tokyo">Tokyo</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+   
+
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
